@@ -1,0 +1,47 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "simplenodeservice-team03-dev"
+  title: "simplenodeservice-team03-dev"
+  description: "Template for the simplenodeservice owned and operated by team03 in environment dev"
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    # Not working
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/name=userinterface'
+    'backstage.io/kubernetes-namespace': 'simplenodeservice-team03-dev'
+    argocd/app-name: simplenodeservice-team03-dev
+  links:
+    - url: https://github.com/faultylogic/enablement-openpipeline-segments-iam.git
+      title: Github Repo
+      icon: github
+    - url: https://animated-space-robot-rxp77pq5vw3pv4j-80.app.github.dev/simplenodeservice-team03-dev
+      title: "Browse Application"
+      icon: subject
+    - title: View in ArgoCD
+      icon: catalog
+      url: https://animated-space-robot-rxp77pq5vw3pv4j-30100.app.github.dev/applications/argocd/simplenodeservice-team03-dev
+    - title: View in Dynatrace
+      icon: catalog
+      url: https://fnb80674.apps.dynatrace.com
+    - url: https://community.dynatrace.com
+      title: Dynatrace community
+      icon: dashboard
+spec:
+  type: website
+  owner: team03
+  lifecycle: dev
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: "team03"
+  description: Group for application team team03
+spec:
+  type: business-unit
+  profile:
+    displayName: Team 03
+    email: team3@example.com
+    picture: https://example.com/staff/jenny-with-party-hat.jpeg
+  parent: applications
+  children: []
+#   members: [jdoe]
